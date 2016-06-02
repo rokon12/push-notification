@@ -41,14 +41,14 @@ public class NotificationAdapter {
             final SimpleApnsPushNotification pushNotification;
             {
                 final ApnsPayloadBuilder payloadBuilder = new ApnsPayloadBuilder();
-                payloadBuilder.setAlertBody("Example!");
+                payloadBuilder.setAlertBody("Hello world!");
 
                 final String payload = payloadBuilder.buildWithDefaultMaximumLength();
                 final String token = TokenUtil.sanitizeTokenString("8ac3e28d761b74eff6fea8b1f2e05c55ab7539c45710df5c382c843889217883");
 
 
                 //TODO: figure out what is topic
-                pushNotification = new SimpleApnsPushNotification(token, "maximization.footballapp.NotificationAdapter", payload);
+                pushNotification = new SimpleApnsPushNotification(token, "com.powerdreamer.choachofftf", payload);
                 final Future<PushNotificationResponse<SimpleApnsPushNotification>> sendNotificationFuture =
                         apnsClient.sendNotification(pushNotification);
 
